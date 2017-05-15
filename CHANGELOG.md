@@ -1,5 +1,9 @@
 # Changelog
 
+## 6.1.0
+
+* rename plugin for GWDG
+
 ## 3.0.8
 
 * adapt plugin to new version scheme

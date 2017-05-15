@@ -1,23 +1,23 @@
-OpenProject Dark-Theme Plugin
+OpenProject GWDG-Theme Plugin
 =============================
 
-This Plugin adds the dark theme to OpenProject which provides an alternative to the default OpenProject theme. The theme can be activated in the account settings for each individual user.
+This Plugin adds the GWDG theme to OpenProject which provides an alternative to the default OpenProject theme. The theme can be activated in the account settings for each individual user.
 
-A more detailed description can be found on [OpenProject.org](https://community.openproject.org/projects/dark-theme).
+A more detailed description can be found on [GWDG](https://www.gwdg.de).
 
 
 Requirements
 ------------
 
-The OpenProject Dark-Theme plugin requires the [OpenProject Core](https://github.com/opf/openproject/) in the same version.
+The OpenProject GWDG-Theme plugin requires the [OpenProject Core](https://github.com/opf/openproject/) in the same version.
 
 
 Installation
 ------------
 
-For OpenProject Dark-Theme plugin you need to add the following line to the `Gemfile.plugins` of OpenProject (if you use a different OpenProject version than OpenProject 5, adapt `:branch => "stable/5"` to your OpenProject version):
+For OpenProject GWDG-Theme plugin you need to add the following line to the `Gemfile.plugins` of OpenProject (if you use a different OpenProject version than OpenProject 6.1, adapt `:branch => "release/6.1"` to your OpenProject version):
 
-`gem "openproject-themes-dark", git: "https://github.com/finnlabs/openproject-themes-dark.git", :branch => "stable/5"`
+`gem "openproject-themes-gwdg", git: "https://github.com/gwdg/openproject-themes-gwdg.git", :branch => "release/6.1"`
 
 Afterwards, run:
 
@@ -29,7 +29,7 @@ Deinstallation
 
 Remove the line
 
-`gem "openproject-themes-dark", git: "https://github.com/finnlabs/openproject-themes-dark.git", :branch => "stable/5"`
+`gem "openproject-themes-gwdg", git: "https://github.com/gwdg/openproject-themes-gwdg.git", :branch => "release/6.1"`
 
 from the file `Gemfile.plugins` and run:
 
@@ -41,14 +41,14 @@ Bug Reporting
 
 If you find any bugs, you can create a bug ticket at
 
-https://community.openproject.org/projects/dark-theme
+https://www.gwdg.de
 
 
 Development
 -----------
 
 To contribute, you can create pull request on the official repository at
-`https://github.com/finnlabs/openproject-themes-dark`
+`https://github.com/gwdg/openproject-themes-gwdg`
 
 
 Licence
