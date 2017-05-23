@@ -26,6 +26,60 @@
 // See doc/COPYRIGHT.rdoc for more details.
 //++
 
+//For header and main footer background, main body title fonts, menu item fonts
+$gwdg-dark-gray1:                                         #455761
+//For main body fonts
+$gwdg-dark-gray2:                                         #333333
+//For left main manu
+$gwdg-dark-gray3:                                        #2E3233
+//For header menu fonts, background of main menu items
+$gwdg-light-gray1:                                        #F1F4F5
+//For main body background
+$gwdg-light-gray2:                                        #F5F7F9
+//For lower footer icons and text, upper footer background
+$gwdg-light-gray3:                                        #C8D2D7
+
+$gwdg-light-gray4:                                        #E5E5E5
+//For background of main menu
+$gwdg-light-gray5:                                        #E2E8EB
+//For some backgrounds, font in links, hover fonts
+$gwdg-light-blue1:                                        #00AEEF
+//For hover of some backgrounds
+$gwdg-light-blue2:                                        #2FA4F5
+//For some buttons
+$gwdg-light-green1:                                       #009C96
+//For some buttons hover
+$gwdg-light-green2:                                       #2F929C
+
+
+
+$gwdg-header-background-color:                            $gwdg-dark-gray1
+$gwdg-header-item-background-color:                       $gwdg-dark-gray1
+$gwdg-header-item-background-hover-color:                 $gwdg-dark-gray1
+$gwdg-header-item-font-color:                             $gwdg-light-gray1
+$gwdg-header-item-font-hover-color:                       $gwdg-light-blue1
+$gwdg-header-drop-down-background-color:                  $gwdg-dark-gray1
+$gwdg-header-drop-down-background-hover-color:            $gwdg-dark-gray1
+$gwdg-header-drop-down-font-color:                        $gwdg-light-gray1
+$gwdg-header-drop-down-font-hover-color:                  $gwdg-light-blue1
+$gwdg-header-drop-down-item-background-color:             white
+$gwdg-header-drop-down-item-background-hover-color:       white
+$gwdg-header-drop-down-item-font-color:                   $gwdg-dark-gray1
+$gwdg-header-drop-down-item-font-hover-color:             $gwdg-light-blue1
+
+$gwdg-body-background-color:                              $gwdg-light-gray2
+$gwdg-body-title-font-color:                              $gwdg-dark-gray1
+$gwdg-body-font-color:                                    $gwdg-dark-gray2
+
+$gwdg-lower-footer-background-color:                      black
+$gwdg-lower-footer-background-hover-color:                black
+$gwdg-lower-footer-font-color:                            $gwdg-light-gray3
+$gwdg-lower-footer-link-hover-color:                      white
+
+
+
+
+
 $gray:                    #EAEAEA
 $gray-dark:               #878787
 $gray-light:              #F8F8F8
@@ -60,23 +114,34 @@ $h4-font-color:           $body-font-color  !default
 
 $header-logo-width:                             54px !default
 $header-height:                                 50px !default
-$header-bg-color:                               $primary-color !default
+$header-bg-color:                               $gwdg-header-background-color !default
 $header-border-bottom-color:                    $primary-color !default
 $header-border-bottom-width:                    0 !default
-$header-item-font-size:                         14px !default
-$header-item-font-color:                        $font-color-on-primary !default
-$header-item-font-hover-color:                  $font-color-on-primary-dark !default
-$header-item-bg-hover-color:                    $primary-color-dark !default
-$header-drop-down-bg-color:                     #FFFFFF !default
-$header-drop-down-border-color:                 #E0E0E0 !default
-$header-drop-down-item-font-color:              $body-font-color !default
-$header-drop-down-item-font-hover-color:        #FFFFFF !default
 
-$header-logo-bg-color:                          $primary-color-dark !default
+$header-item-font-size:                         14px !default
+$header-item-font-color:                        $gwdg-header-item-font-color !default
+$header-item-font-hover-color:                  $gwdg-header-item-font-hover-color !default
+$header-item-bg-color:                          $gwdg-header-item-background-color !default
+$header-item-bg-hover-color:                    $gwdg-header-item-background-hover-color !default
+$header-item-border-color:                      #E0E0E0 !default
+$header-drop-down-font-size:                    14px !default
+$header-drop-down-font-color:                   $gwdg-header-drop-down-font-color !default
+$header-drop-down-font-hover-color:             $gwdg-header-drop-down-font-hover-color !default
+$header-drop-down-bg-color:                     $gwdg-header-drop-down-background-color !default
+$header-drop-down-bg-hover-color:               $gwdg-header-drop-down-background-hover-color !default
+$header-drop-down-border-color:                 #E0E0E0 !default
+$header-drop-down-item-font-size:               14px !default
+$header-drop-down-item-font-color:              $gwdg-header-drop-down-item-font-color !default
+$header-drop-down-item-font-hover-color:        $gwdg-header-drop-down-item-font-hover-color !default
+$header-drop-down-item-bg-color:                $gwdg-header-drop-down-item-background-color !default
+$header-drop-down-item-bg-hover-color:          $gwdg-header-drop-down-item-background-hover-color !default
+
+$header-logo-bg-color:                          $gwdg-header-background-color !default
 $header-home-link-bg:                           image-url('gwdg-theme/gwdg_logo_only_invert.svg') no-repeat 6px 0 !default
 
-$header-drop-down-projects-search-font-color:         $body-font-color !default
-$header-drop-down-projects-search-bg-color:           #E0E0E0 !default
+$header-drop-down-projects-search-font-color:         $gwdg-header-drop-down-item-font-color !default
+$header-drop-down-projects-search-font-hover-color:   $gwdg-header-drop-down-item-font-hover-color !default
+$header-drop-down-projects-search-bg-color:           $gwdg-header-drop-down-item-background-color !default
 $header-drop-down-projects-search-input-bg-color:     #F5F5F5 !default
 $header-drop-down-projects-search-input-border-color: #D9D9D9 !default
 
@@ -84,12 +149,14 @@ $header-search-field-bg-color:                  #FFFFFF !default
 $header-search-field-font-color:                #000000 !default
 $header-search-field-border:                    0 !default
 
-$footer-bg-color:                               $primary-color !default
-$footer-font-color:                             $font-color-on-primary !default
-$footer-height:                                 55px !default
-$footer-content-height:                         55px !default
-$footer-content-line-height:                    55px !default
-$footer-content-link-color:                     $font-color-on-primary !default
+$footer-bg-color:                               $gwdg-lower-footer-background-color !default
+$footer-bg-hover-color:                         $gwdg-lower-footer-background-hover-color !default
+$footer-font-color:                             $gwdg-lower-footer-font-color !default
+$footer-height:                                 32px !default
+$footer-content-height:                         32px !default
+$footer-content-line-height:                    32px !default
+$footer-content-link-color:                     $gwdg-lower-footer-font-color !default
+$footer-content-link-hover-color:               $gwdg-lower-footer-link-hover-color !default
 
 $main-menu-width:                               230px !default
 $main-menu-folded-width:                        50px !default
