@@ -56,6 +56,8 @@
   :-moz-placeholder
     color: $header-search-field-font-color
   ul
+    // menu item (main)
+    background-color: $header-item-bg-color
     margin: 0
     padding: 0
     float: left
@@ -63,6 +65,8 @@
     border-top: 0
     position: relative
   li
+    // menu item (without drop-down items)
+    background-color: $header-item-bg-color
     float: left
     list-style-type: none
     white-space: nowrap
@@ -75,10 +79,11 @@
       zoom: 1
       @include default-font($header-item-font-color, $header-item-font-size)
       text-decoration: none
+      text-transform: uppercase
       padding: 0 15px 0 15px
 
     > a:hover
-      background: $header-item-bg-hover-color
+      background-color: $header-item-bg-hover-color
       color: $header-item-font-hover-color
     > ul
       top: $header-height + $header-border-bottom-width
@@ -88,9 +93,9 @@
       min-width: 270px
       left: -1px
       z-index: 20
-      border: 2px solid $header-drop-down-border-color
+      border: 2px solid $header-item-border-color
       border-top: 0
-      background-color: $header-drop-down-bg-color
+      background-color: $header-item-bg-color
       li
         float: none
         white-space: nowrap
@@ -112,16 +117,22 @@
       width: 100%
 
     > a
+      //menu drop-down (with drop-down items)
+      @include default-font($header-drop-down-font-color, $header-drop-down-font-size)
+      background-color: $header-drop-down-bg-color
       &:after
         @include icon-common
         font-size: 10px
         padding: 0 0 0 9px
         @extend .icon-pulldown:before
-    &:hover
-      background-color: $header-item-bg-hover-color
+    &:hover > a
+      //menu drop-down (with drop-down items) hover
+      background-color: $header-drop-down-bg-hover-color
+      color: $header-drop-down-font-hover-color
     &.open > a
-      background-color: $header-item-bg-hover-color
-      color: $header-item-font-hover-color
+      //menu drop-down (with drop-down items) opened
+      background-color: $header-drop-down-bg-hover-color
+      color: $header-drop-down-font-hover-color
       &:after
         @include icon-common
         font-size: 10px
@@ -129,14 +140,22 @@
         @extend .icon-pulldown-up:before
 
     li
+      //menu drop-down item list (titles)
+      background-color: $header-drop-down-item-bg-color
       > a
+        //menu drop-down item
+        text-transform: none
+        background-color: $header-drop-down-item-bg-color
         color: $header-drop-down-item-font-color
         padding: 0 15px
         &:hover
-          background: $header-item-bg-hover-color
+          //menu drop-down item hover
+          background-color: $header-drop-down-item-bg-hover-color
           color: $header-drop-down-item-font-hover-color
 
     > ul
+      //menu drop-down item list
+      background-color: $header-drop-down-item-bg-color
       padding: 6px 0
 
     &.-hide-icon
@@ -153,8 +172,8 @@
       margin-bottom: 5px
     .drop-down--help-headline
       padding-left: 15px
-      color: $gray-dark
-      text-transform: uppercase
+      color: $gwdg-light-blue1
+      //text-transform: uppercase
 
   #loggedas
     float: right
@@ -275,10 +294,11 @@ input.top-menu-search--input
     padding: 0
 
     .select2-highlighted
-      background: $primary-color !important
+      //search results hover-selected
+      background-color: $header-drop-down-projects-search-bg-color !important
       border-radius: 0 !important
       font-weight: bold !important
-      color: $font-color-on-primary
+      color: $header-drop-down-projects-search-font-hover-color
 
 #header
   height: $header-height
