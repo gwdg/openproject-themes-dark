@@ -76,21 +76,44 @@ $gwdg-lower-footer-background-hover-color:                black
 $gwdg-lower-footer-font-color:                            $gwdg-light-gray3
 $gwdg-lower-footer-link-hover-color:                      white
 
-$gwdg-main-menu-border-color:                             darken($gwdg-light-gray3, 10)
+$gwdg-main-menu-border-color:                             darken($gwdg-light-gray3, 10%)
 $gwdg-main-menu-background-color:                         $gwdg-light-gray3
 $gwdg-main-menu-background-hover-selected-color:          $gwdg-light-gray3
 $gwdg-main-menu-font-color:                               $gwdg-dark-gray1
 $gwdg-main-menu-selected-font-color:                      $gwdg-light-blue1
-$gwdg-main-menu-child-border-color:                       darken($gwdg-light-gray2, 10)
+$gwdg-main-menu-child-border-color:                       darken($gwdg-light-gray2, 10%)
 $gwdg-main-menu-child-background-color:                   $gwdg-light-gray2
 $gwdg-main-menu-child-background-hover-selected-color:    $gwdg-light-gray2
 $gwdg-main-menu-child-font-color:                         $gwdg-dark-gray1
 $gwdg-main-menu-child-selected-font-color:                $gwdg-light-blue1
 
 $gwdg-breadcrumb-bg-color:                                $gwdg-light-gray3
-$gwdg-breadcrumb-border-color:                            darken($gwdg-light-gray3, 10)
+$gwdg-breadcrumb-border-color:                            darken($gwdg-light-gray3, 10%)
 $gwdg-breadcrumb-font-color:                              $gwdg-dark-gray1
 $gwdg-breadcrumb-font-hover-selected-color:               $gwdg-light-blue1
+
+$gwdg-button--font-color:                                 $gwdg-dark-gray1
+$gwdg-button--background-color:                           $gwdg-light-gray4
+$gwdg-button--background-hover-color:                     darken($gwdg-light-gray4, 4%)
+$gwdg-button--border-color:                               darken($gwdg-light-gray4, 10%)
+//Active buttons seem not to be in use
+$gwdg-button--active-font-color:                          $gwdg-dark-gray1
+$gwdg-button--active-background-color:                    $gwdg-light-gray3
+$gwdg-button--active-background-hover-color:              darken($gwdg-light-gray3, 4%)
+$gwdg-button--active-border-color:                        darken($gwdg-light-gray3, 10%)
+$gwdg-button--highlight-font-color:                       white
+$gwdg-button--highlight-background-color:                 $gwdg-light-blue1
+$gwdg-button--highlight-background-hover-color:           $gwdg-light-blue2
+$gwdg-button--highlight-border-color:                     darken($gwdg-light-blue2, 10%)
+$gwdg-button--alt-highlight-font-color:                   white
+$gwdg-button--alt-highlight-background-color:             $gwdg-light-green1
+$gwdg-button--alt-highlight-background-hover-color:       $gwdg-light-green2
+$gwdg-button--alt-highlight-border-color:                 darken($gwdg-light-green2, 10%)
+
+$gwdg-toolbar-title-color:                                $gwdg-body-title-font-color
+$gwdg-toolbar-item--bg-color:                             $gwdg-light-gray4
+$gwdg-toolbar-item--bg-color-pressed:                     darken($gwdg-light-gray4, 4%)
+$gwdg-toolbar-item--border-color:                         darken($gwdg-light-gray4, 10%)
 
 
 
@@ -108,9 +131,13 @@ $body-font-family:        'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif 
 $body-font-color:         #333 !default
 $base-line-height:        1.5 !default
 
+//Blue-green
 $primary-color:           #3493B3 !default
+//Dark blue-green
 $primary-color-dark:      #06799F !default
+//Gray
 $secondary-color:         #bfbfbf !default
+//Green
 $alternative-color:       #35c53f !default
 
 // these colors should ensure a satisfying contrast for text on the given BG color
@@ -211,10 +238,10 @@ $main-menu-sidebar-link-hover-color:            $gwdg-body-title-font-color !def
 $main-menu-sidebar-h3-border-top-color:         $gwdg-main-menu-background-color !default
 $main-menu-sidebar-h3-font-size:                15px !default
 
-$toolbar-title-color:                           #5F5F5F
-$toolbar-item--bg-color:                        #F8F8F8
-$toolbar-item--bg-color-pressed:                $gray-lighter
-$toolbar-item--border-color:                    #DDD
+$toolbar-title-color:                           $gwdg-toolbar-title-color
+$toolbar-item--bg-color:                        $gwdg-toolbar-item--bg-color
+$toolbar-item--bg-color-pressed:                $gwdg-toolbar-item--bg-color-pressed
+$toolbar-item--border-color:                    $gwdg-toolbar-item--border-color
 
 $breadcrumb-height:                             40px !default
 $breadcrumb-bg-color:                           $gwdg-breadcrumb-bg-color !default
