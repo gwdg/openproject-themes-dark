@@ -92,6 +92,30 @@ $gwdg-breadcrumb-border-color:                            darken($gwdg-light-gra
 $gwdg-breadcrumb-font-color:                              $gwdg-dark-gray1
 $gwdg-breadcrumb-font-hover-selected-color:               $gwdg-light-blue1
 
+$gwdg-content-default-border-color:                       #EAEAEA
+
+$gwdg-content-link-color:                                 $gwdg-light-blue1
+$gwdg-content-link-hover-active-color:                    $gwdg-body-title-font-color
+$gwdg-content-icon-link-color:                            $gwdg-light-blue1
+$gwdg-content-icon-link-hover-color:                      $gwdg-light-blue1
+$gwdg-content-icon-link-pressed-color:                    $gwdg-body-title-font-color
+$gwdg-content-icon-color:                                 $gwdg-light-blue1
+
+$gwdg-content-form-bg-color:                              #F8F8F8
+$gwdg-content-form-border-color:                          $gwdg-content-default-border-color
+$gwdg-content-form-input-border-color:                    #CACACA
+$gwdg-content-form-input-hover-border-color:              #888888
+$gwdg-content-form-error-color:                           #9E2A1C
+$gwdg-content-form-separator-color:                       #DDDDDD
+$gwdg-content-form-danger-zone-bg-color:                  #CA3F3F
+$gwdg-content-form-danger-zone-font-color:                white
+
+$gwdg-form-label-color:                                   $gwdg-body-title-font-color
+
+$gwdg-drop-down-unselected-font-color:                    $gwdg-body-font-color
+$gwdg-drop-down-selected-font-color:                      white
+$gwdg-drop-down-selected-bg-color:                        $gwdg-light-blue1
+
 $gwdg-button--font-color:                                 $gwdg-dark-gray1
 $gwdg-button--background-color:                           $gwdg-light-gray4
 $gwdg-button--background-hover-color:                     darken($gwdg-light-gray4, 4%)
@@ -121,14 +145,16 @@ $gwdg-toolbar-item--border-color:                         darken($gwdg-light-gra
 
 $gray:                    #EAEAEA
 $gray-dark:               #878787
-$gray-light:              #F8F8F8
+$gray-light:              $gwdg-light-gray3
 $gray-lighter:            #E9E9E9
 
 $light-gray: #ccc
 
-$body-background:         white !default
+//general background (without content), titles of columns in tables,
+$body-background:         $gwdg-body-background-color !default
 $body-font-family:        'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif !default
-$body-font-color:         #333 !default
+$body-font-color:         $gwdg-body-font-color !default
+$body-title-font-color:   $gwdg-body-title-font-color !default
 $base-line-height:        1.5 !default
 
 //Blue-green
@@ -146,14 +172,14 @@ $font-color-on-primary-dark: white !default
 $font-color-on-secondary:    white !default
 $font-color-on-alternative:  white !default
 
-$h1-font-size:            2rem              !default
-$h1-font-color:           $body-font-color  !default
-$h2-font-size:            1.5rem            !default
-$h2-font-color:           $body-font-color  !default
-$h3-font-size:            1.125rem          !default
-$h3-font-color:           $body-font-color  !default
-$h4-font-size:            $h3-font-size * 0.75 !default
-$h4-font-color:           $body-font-color  !default
+$h1-font-size:            2rem                         !default
+$h1-font-color:           $gwdg-body-title-font-color  !default
+$h2-font-size:            1.5rem                       !default
+$h2-font-color:           $gwdg-body-title-font-color  !default
+$h3-font-size:            1.125rem                     !default
+$h3-font-color:           $gwdg-body-title-font-color  !default
+$h4-font-size:            $h3-font-size * 0.75         !default
+$h4-font-color:           $gwdg-body-title-font-color  !default
 
 $header-logo-width:                             54px !default
 $header-height:                                 50px !default
@@ -251,30 +277,32 @@ $breadcrumb-highlighted-font-size:              14px !default
 $breadcrumb-font-color:                         $gwdg-breadcrumb-font-color !default
 $breadcrumb-font-hover-selected-color:          $gwdg-breadcrumb-font-hover-selected-color !default
 
-$content-default-border-color:                  #EAEAEA !default
+$content-default-border-color:                  $gwdg-content-default-border-color !default
 $content-default-border-width:                  1px !default
 
-$content-link-color:                            $primary-color-dark !default
-$content-link-hover-active-color:               $primary-color-dark !default
-$content-icon-link-color:                       #4b4b4b !default
-$content-icon-link-hover-color:                 $primary-color-dark !default
-$content-icon-link-pressed-color:               $gray-dark !default
+$content-link-color:                            $gwdg-content-link-color !default
+$content-link-hover-active-color:               $gwdg-content-link-hover-active-color !default
+$content-icon-link-color:                       $gwdg-content-icon-link-color !default
+$content-icon-link-hover-color:                 $gwdg-content-icon-link-hover-color !default
+$content-icon-link-pressed-color:               $gwdg-content-icon-link-pressed-color !default
 
-$content-icon-color:                            $primary-color-dark !default
+$content-icon-color:                            $gwdg-content-icon-color !default
 
-$content-form-bg-color:                         #F8F8F8 !default
-$content-form-border:                           1px solid $content-default-border-color !default
+$content-form-bg-color:                         $gwdg-content-form-bg-color !default
+$content-form-border:                           1px solid $gwdg-content-form-border-color !default
 
 $content-from-input-width:                      300px !default
-$content-form-input-border:                     1px solid #CACACA !default
-$content-form-input-hover-border:               1px solid #888888 !default
+$content-form-input-border:                     1px solid $gwdg-content-form-input-border-color !default
+$content-form-input-hover-border:               1px solid $gwdg-content-form-input-hover-border-color !default
 
-$content-form-error-color:                      #9E2A1C !default
+$content-form-error-color:                      $gwdg-content-form-error-color !default
 
-$content-form-separator-color:                  #DDDDDD !default
+$content-form-separator-color:                  $gwdg-content-form-separator-color !default
 
-$content-form-danger-zone-bg-color:             #CA3F3F !default
-$content-form-danger-zone-font-color:           white !default
+$content-form-danger-zone-bg-color:             $gwdg-content-form-danger-zone-bg-color !default
+$content-form-danger-zone-font-color:           $gwdg-content-form-danger-zone-font-color !default
+
+$form-label-color:                              $gwdg-form-label-color !default
 
 $content-calendar-border-width:                 1px !default
 $content-calendar-border-color:                 #D7D7D7 !default
@@ -291,9 +319,9 @@ $content-box-border:                            1px solid $content-default-borde
 $content-box-bg-color:                          #FFFFFF !default
 $my-page-edit-box-border-color:                 $primary-color-dark !default
 
-$drop-down-unselected-font-color:               $main-menu-font-color !default
-$drop-down-selected-font-color:                 $font-color-on-primary !default
-$drop-down-selected-bg-color:                   $primary-color !default
+$drop-down-unselected-font-color:               $gwdg-drop-down-unselected-font-color !default
+$drop-down-selected-font-color:                 $gwdg-drop-down-selected-font-color !default
+$drop-down-selected-bg-color:                   $gwdg-drop-down-selected-bg-color !default
 
 $action-menu-bg-color:                          #FFFFFF
 

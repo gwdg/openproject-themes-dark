@@ -79,7 +79,7 @@ table.generic-table
   col
     &:hover,
     &.hover
-      background:   #f8f8f8
+      background: $gray-light
 
   thead
     tr
@@ -94,13 +94,13 @@ table.generic-table
       min-width: 150px
 
       &.active-column
-        background: #f8f8f8
+        background: $gray-light
       a
         text-decoration: none
-        color: $body-font-color
+        color: $body-title-font-color
         &:hover, &:active
           text-decoration: none
-          color: $body-font-color
+          color: $body-title-font-color
 
       &.-short
         min-width: 0
@@ -200,7 +200,7 @@ table.generic-table
 
     &:hover,
     &.hover
-      background:   #f8f8f8
+      background: $gray-light
 
   .generic-table--column-spacer
     white-space:  nowrap
@@ -214,6 +214,7 @@ table.generic-table
     width:   100%
     clear:   both
     display: block
+    color:   $body-title-font-color
 
     & > a,
     & > span
