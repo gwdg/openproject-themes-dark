@@ -14,6 +14,10 @@ module OpenProject::Themes::GWDG
       author_url: 'https://www.gwdg.de',
       requires_openproject: ">= 7.0.0"
 
+    assets %w(
+      themes-gwdg/gwdg_logo_only_invert.svg
+    )
+
     #Overrides (replaces) the original files of OpenProject with the files from the plugin
     config.to_prepare do
       #Replaces desing.rb
