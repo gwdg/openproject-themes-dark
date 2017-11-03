@@ -30,6 +30,59 @@
 module OpenProject
   class Design
     DEFAULTS = {
+      #For header and main footer background, main body title fonts, menu item fonts
+      'gwdg-dark-gray1'                                      => "#455761",
+      #For main body fonts
+      'gwdg-dark-gray2'                                      => "#333333",
+      #For left main manu
+      'gwdg-dark-gray3'                                      => "#2E3233",
+      #For header menu fonts, background of main menu items
+      'gwdg-light-gray1'                                     => "#F1F4F5",
+      #For main body background
+      'gwdg-light-gray2'                                     => "#F5F7F9",
+      #For lower footer icons and text, upper footer background
+      'gwdg-light-gray3'                                     => "#C8D2D7",
+
+      'gwdg-light-gray4'                                     => "#E5E5E5",
+      #For background of main menu
+      'gwdg-light-gray5'                                     => "#E2E8EB",
+      #For some backgrounds, font in links, hover fonts
+      'gwdg-light-blue1'                                     => "#00AEEF",
+      #For hover of some backgrounds
+      'gwdg-light-blue2'                                     => "#2FA4F5",
+      #For some buttons
+      'gwdg-light-green1'                                    => "#009C96",
+      #For some buttons hover
+      'gwdg-light-green2'                                    => "#2F929C",
+
+
+      'gwdg-header-background-color'                         => "$gwdg-dark-gray1",
+      'gwdg-header-item-background-color'                    => "$gwdg-dark-gray1",
+      'gwdg-header-item-background-hover-color'              => "$gwdg-dark-gray1",
+      'gwdg-header-item-font-color'                          => "$gwdg-light-gray1",
+      'gwdg-header-item-font-hover-color'                    => "$gwdg-light-blue1",
+      'gwdg-header-drop-down-background-color'               => "$gwdg-dark-gray1",
+      'gwdg-header-drop-down-background-hover-color'         => "$gwdg-dark-gray1",
+      'gwdg-header-drop-down-font-color'                     => "$gwdg-light-gray1",
+      'gwdg-header-drop-down-font-hover-color'               => "$gwdg-light-blue1",
+      'gwdg-header-drop-down-item-background-color'          => "white",
+      'gwdg-header-drop-down-item-background-hover-color'    => "white",
+      'gwdg-header-drop-down-item-font-color'                => "$gwdg-dark-gray1",
+      'gwdg-header-drop-down-item-font-hover-color'          => "$gwdg-light-blue1",
+
+      'gwdg-body-background-color'                           => "$gwdg-light-gray2",
+      'gwdg-body-title-font-color'                           => "$gwdg-dark-gray1",
+      'gwdg-body-font-color'                                 => "$gwdg-dark-gray2",
+
+      'gwdg-lower-footer-background-color'                   => "black",
+      'gwdg-lower-footer-background-hover-color'             => "black",
+      'gwdg-lower-footer-font-color'                         => "$gwdg-light-gray3",
+      'gwdg-lower-footer-link-hover-color'                   => "white",
+
+
+
+
+
       'primary-color'                                        => "#3493B3",
       'primary-color-dark'                                   => "#06799F",
       'alternative-color'                                    => "#35C53F",
@@ -58,31 +111,44 @@ module OpenProject
       'header-logo-width'                                    => "54px",
       'header-height'                                        => "50px",
       'header-height-mobile'                                 => "45px",
-      'header-bg-color'                                      => "$primary-color",
+      'header-bg-color'                                      => "$gwdg-header-background-color",
+      'header-logo-bg-color'                                 => "$gwdg-header-background-color",
       'header-home-link-bg'                                  => '#{image-url("gwdg_logo_only_invert.svg") no-repeat 6px 0}',
       'header-border-bottom-color'                           => "$primary-color",
       'header-border-bottom-width'                           => "0",
       'header-item-font-size'                                => "14px",
-      'header-item-font-color'                               => "$font-color-on-primary",
-      'header-item-font-hover-color'                         => "$font-color-on-primary-dark",
-      'header-item-bg-hover-color'                           => "$primary-color-dark",
-      'header-drop-down-bg-color'                            => "#FFFFFF",
+      'header-item-font-color'                               => "$gwdg-header-item-font-color",
+      'header-item-font-hover-color'                         => "$gwdg-header-item-font-hover-color",
+      'header-item-bg-color'                                 => "$gwdg-header-item-background-color",
+      'header-item-bg-hover-color'                           => "$gwdg-header-item-background-hover-color",
+      'header-item-border-color'                             => "#E0E0E0",
+      'header-drop-down-font-size'                           => "14px",
+      'header-drop-down-font-color'                          => "$gwdg-header-drop-down-font-color",
+      'header-drop-down-font-hover-color'                    => "$gwdg-header-drop-down-font-hover-color",
+      'header-drop-down-bg-color'                            => "$gwdg-header-drop-down-background-color",
+      'header-drop-down-bg-hover-color'                      => "$gwdg-header-drop-down-background-hover-color",
       'header-drop-down-border-color'                        => "#E0E0E0",
-      'header-drop-down-item-font-color'                     => "$body-font-color",
-      'header-drop-down-item-font-hover-color'               => "#FFFFFF",
-      'header-drop-down-projects-search-font-color'          => "$body-font-color",
-      'header-drop-down-projects-search-bg-color'            => "#E0E0E0",
+      'header-drop-down-item-font-size'                      => "14px",
+      'header-drop-down-item-font-color'                     => "$gwdg-header-drop-down-item-font-color",
+      'header-drop-down-item-font-hover-color'               => "$gwdg-header-drop-down-item-font-hover-color",
+      'header-drop-down-item-bg-color'                       => "$gwdg-header-drop-down-item-background-color",
+      'header-drop-down-item-bg-hover-color'                 => "$gwdg-header-drop-down-item-background-hover-color",
+      'header-drop-down-projects-search-font-color'          => "$gwdg-header-drop-down-item-font-color",
+      'header-drop-down-projects-search-font-hover-color'    => "$gwdg-header-drop-down-item-font-hover-color",
+      'header-drop-down-projects-search-bg-color'            => "$gwdg-header-drop-down-item-background-color",
       'header-drop-down-projects-search-input-bg-color'      => "#F5F5F5",
       'header-drop-down-projects-search-input-border-color'  => "#D9D9D9",
       'header-search-field-bg-color'                         => "#FFFFFF",
       'header-search-field-font-color'                       => "#000000",
       'header-search-field-border'                           => "0",
-      'footer-bg-color'                                      => "$primary-color",
-      'footer-font-color'                                    => "$font-color-on-primary",
-      'footer-height'                                        => "55px",
-      'footer-content-height'                                => "55px",
-      'footer-content-line-height'                           => "55px",
-      'footer-content-link-color'                            => "$font-color-on-primary",
+      'footer-bg-color'                                      => "$gwdg-lower-footer-background-color",
+      'footer-bg-hover-color'                                => "$gwdg-lower-footer-background-hover-color",
+      'footer-font-color'                                    => "$gwdg-lower-footer-font-color",
+      'footer-height'                                        => "32px",
+      'footer-content-height'                                => "32px",
+      'footer-content-line-height'                           => "32px",
+      'footer-content-link-color'                            => "$gwdg-lower-footer-font-color",
+      'footer-content-link-hover-color'                      => "$gwdg-lower-footer-link-hover-color",
       'main-menu-width'                                      => "230px",
       'main-menu-folded-width'                               => "50px",
       'main-menu-border-color'                               => "#E7E7E7",

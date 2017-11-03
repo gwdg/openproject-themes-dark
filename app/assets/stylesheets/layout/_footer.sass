@@ -46,9 +46,12 @@
     margin: 0 15px 0 0
     height: $footer-content-height
     line-height: $footer-content-line-height
-    a
-      text-decoration: underline
+    > a
+      text-decoration: none
       @include default-font($footer-content-link-color)
+    > a:hover
+      background-color: $footer-bg-hover-color
+      color: $footer-content-link-hover-color
 
 @include breakpoint(680px down)
   #footer
