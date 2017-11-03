@@ -15,9 +15,9 @@ The OpenProject GWDG-Theme plugin requires the [OpenProject Core](https://github
 Installation
 ------------
 
-For OpenProject GWDG-Theme plugin you need to add the following line to the `Gemfile.plugins` of OpenProject (if you use a different OpenProject version than OpenProject 6.1, adapt `:branch => "release/6.1"` to your OpenProject version):
+For OpenProject GWDG-Theme plugin you need to add the following line to the `Gemfile.plugins` of OpenProject (if you use a different OpenProject version than OpenProject 7.0, adapt `:branch => "release/7.0"` to your OpenProject version):
 
-`gem "openproject-themes-gwdg", git: "https://github.com/gwdg/openproject-themes-gwdg.git", :branch => "release/6.1"`
+`gem "openproject-themes-gwdg", git: "https://github.com/gwdg/openproject-themes-gwdg.git", :branch => "release/7.0"`
 
 Afterwards, run:
 
@@ -29,7 +29,7 @@ Deinstallation
 
 Remove the line
 
-`gem "openproject-themes-gwdg", git: "https://github.com/gwdg/openproject-themes-gwdg.git", :branch => "release/6.1"`
+`gem "openproject-themes-gwdg", git: "https://github.com/gwdg/openproject-themes-gwdg.git", :branch => "release/7.0"`
 
 from the file `Gemfile.plugins` and run:
 

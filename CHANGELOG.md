@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.0.alpha
+
+* OpenProject does not support themes anymore. The plugin has to replace files now. Restructuring the plugin...
+
+* rename plugin for GWDG
+
 ## 6.1.0
 
 * rename plugin for GWDG

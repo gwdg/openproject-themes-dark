@@ -1,29 +1,17 @@
+# Prevent load-order problems in case openproject-plugins is listed after a plugin in the Gemfile
+# or not at all
+require 'open_project/plugins'
+require 'open_project/themes/gwdg/version'
+
 module OpenProject::Themes::GWDG
   class Engine < ::Rails::Engine
     engine_name :openproject_themes_gwdg
 
-    initializer 'themes.gwdg.register_themes' do
-      ActiveSupport.on_load(:themes) do
-        require 'open_project/themes/gwdg/all'
-      end
-    end
+    include OpenProject::Plugins::ActsAsOpEngine
 
-    config.to_prepare do
-      require 'redmine/plugin'
-      require 'open_project/themes/gwdg/version'
+    register 'openproject-themes-gwdg',
+      author_url: 'https://www.gwdg.de',
+      requires_openproject: ">= 7.0.0"
 
-      Redmine::Plugin.register 'GWDG-Theme' do
-        name 'OpenProject GWDG Theme'
-        author 'GWDG'
-        description 'Custom GWDG theme for OpenProject'
-
-        url 'https://github.com/gwdg/openproject-themes-gwdg'
-        author_url 'https://www.gwdg.de'
-
-        version OpenProject::Themes::GWDG::VERSION
-
-        requires_openproject ">= 6.1.0"
-      end
-    end
   end
 end
