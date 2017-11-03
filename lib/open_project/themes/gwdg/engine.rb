@@ -2,6 +2,7 @@
 # or not at all
 require 'open_project/plugins'
 require 'open_project/themes/gwdg/version'
+require 'fileutils'
 
 module OpenProject::Themes::GWDG
   class Engine < ::Rails::Engine
@@ -12,6 +13,19 @@ module OpenProject::Themes::GWDG
     register 'openproject-themes-gwdg',
       author_url: 'https://www.gwdg.de',
       requires_openproject: ">= 7.0.0"
+
+    #Overrides (replaces) the original files of OpenProject with the files from the plugin
+    config.to_prepare do
+      #Replaces desing.rb
+      FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'lib', 'open_project', 'design.rb'), Rails.root.join('lib', 'open_project', 'design.rb'))
+
+      #Replaces stylesheet files
+      [
+        'layout/_footer.sass', 'layout/_top_menu.sass'
+      ].each do |overriden_file|
+        FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'stylesheets', overriden_file), Rails.root.join('app', 'assets', 'stylesheets', overriden_file))
+      end
+    end
 
   end
 end
