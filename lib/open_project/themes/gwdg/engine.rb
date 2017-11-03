@@ -14,15 +14,12 @@ module OpenProject::Themes::GWDG
       author_url: 'https://www.gwdg.de',
       requires_openproject: ">= 7.0.0"
 
-    assets %w(
-      themes-gwdg/gwdg_logo_only_invert.svg
-    )
-
     #Overrides (replaces) the original files of OpenProject with the files from the plugin
     config.to_prepare do
       #Replaces desing.rb
       FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'lib', 'open_project', 'design.rb'), Rails.root.join('lib', 'open_project', 'design.rb'))
-
+      #Copies new logo
+      FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'images', 'themes-gwdg', 'gwdg_logo_only_invert.svg'), Rails.root.join('app', 'assets', 'images', 'gwdg_logo_only_invert.svg'))
       #Replaces stylesheet files
       [
         'layout/_footer.sass', 'layout/_top_menu.sass'
