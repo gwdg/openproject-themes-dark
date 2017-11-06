@@ -80,15 +80,17 @@
       height: $header-height
       line-height: $header-height
       zoom: 1
-      @include default-font($header-item-font-color, $header-item-font-size)
+      @include varprop(color, header-item-font-color)
+      @include varprop(font-size, header-item-font-size)
+      font-weight: normal
       text-decoration: none
       text-transform: uppercase
       padding: 0 15px 0 15px
 
     > a:hover
       @include varprop(background-color, header-item-bg-hover-color)
+      @include varprop(color, header-item-font-hover-color)
 
-      color: $header-item-font-hover-color
     > ul
       top: $header-height + $header-border-bottom-width
       display: none
@@ -122,14 +124,21 @@
         font-size: 10px
         padding: 0 0 0 9px
         @extend .icon-pulldown:before
-    &:hover > a
+    &:hover
       //menu drop-down (with drop-down items) hover
       @include varprop(background-color, header-drop-down-bg-hover-color)
-      color: $header-drop-down-font-hover-color
-    &.open > a
+      > a
+        @include varprop(color, header-drop-down-font-hover-color)
+        i.icon-help:before
+          @include varprop(border-color, header-drop-down-font-hover-color)
+
+    &.open
       //menu drop-down (with drop-down items) opened
       @include varprop(background-color, header-drop-down-bg-hover-color)
-      color: $header-drop-down-font-hover-color
+      > a
+        @include varprop(color, header-drop-down-font-hover-color)
+        i.icon-help:before
+          @include varprop(border-color, header-drop-down-font-hover-color)
 
       .button--dropdown-indicator
         &:before
@@ -213,7 +222,9 @@
 .top-menu-search--button
   line-height: $header-height
   height: $header-height
-  @include default-font($header-item-font-color, $header-item-font-size)
+  @include varprop(color, header-item-font-color)
+  @include varprop(font-size, header-item-font-size)
+  font-weight: normal
   background: transparent
   &:hover
     text-decoration: none
@@ -233,7 +244,7 @@
     display: block
     &:hover
       @include varprop(background, header-item-bg-hover-color)
-      color: $header-item-font-hover-color
+      @include varprop(color, header-item-font-hover-color)
 
 input.top-menu-search--input
   margin: 0
@@ -300,7 +311,7 @@ input.top-menu-search--input
       //search results hover-selected
       @include varprop(background-color, header-drop-down-projects-search-bg-color, !important)
       border-radius: 0 !important
-      font-weight: bold !important
+      font-weight: normal !important
       @include varprop(color, header-drop-down-projects-search-font-hover-color)
       &:hover
         @include varprop(background-color, header-drop-down-projects-search-bg-color, !important)
@@ -345,7 +356,9 @@ input.top-menu-search--input
       // To accommodate the padding of the help icon which exisits because of the circle
       margin-top: -5px
   .icon-help:before
-    border: 2px solid $header-item-font-color
+    border-width: 2px
+    border-style: solid
+    @include varprop(border-color, header-item-font-color)
     border-radius: 50%
     width: 26px
     height: 26px

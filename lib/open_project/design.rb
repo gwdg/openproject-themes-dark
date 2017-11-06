@@ -163,6 +163,7 @@ module OpenProject
       'base-line-height'                                     => "1.5",
       #Gray
       'secondary-color'                                      => "#bfbfbf",
+      'content-link-color'                                   => "$gwdg-content-link-color",
       'font-color-on-primary'                                => "#FFFFFF",
       'font-color-on-primary-dark'                           => "#FFFFFF",
       'font-color-on-secondary'                              => "#FFFFFF",
@@ -229,6 +230,7 @@ module OpenProject
       'main-menu-bg-selected-background'                     => "$gwdg-main-menu-background-hover-selected-color",
       'main-menu-bg-hover-background'                        => "$gwdg-main-menu-background-hover-selected-color",
       'main-menu-font-color'                                 => "$gwdg-main-menu-font-color",
+      'main-menu-hover-font-color'                           => "$gwdg-main-menu-selected-font-color",
       'main-menu-selected-font-color'                        => "$gwdg-main-menu-selected-font-color",
       'main-menu-font-size'                                  => "15px",
       'main-menu-selected-indicator-color'                   => "$gwdg-main-menu-background-hover-selected-color",
@@ -244,6 +246,7 @@ module OpenProject
       'main-menu-child-menu-border-color'                    => "$gwdg-main-menu-child-border-color",
       'main-menu-child-font-color'                           => "$gwdg-main-menu-child-font-color",
       'main-menu-child-font-size'                            => "13px",
+      'main-menu-child-hover-font-color'                     => "$gwdg-main-menu-child-selected-font-color",
       'main-menu-child-selected-font-color'                  => "$gwdg-main-menu-child-selected-font-color",
       'main-menu-sidebar-font-color'                         => "$gwdg-body-font-color",
       'main-menu-sidebar-h3-color'                           => "$gwdg-body-title-font-color",
@@ -264,7 +267,6 @@ module OpenProject
       'breadcrumb-font-hover-selected-color'                 => "$gwdg-breadcrumb-font-hover-selected-color",
       'content-default-border-color'                         => "$gwdg-content-default-border-color",
       'content-default-border-width'                         => "1px",
-      'content-link-color'                                   => "$gwdg-content-link-color",
       'content-link-hover-active-color'                      => "$gwdg-content-link-hover-active-color",
       'content-icon-link-color'                              => "$gwdg-content-icon-link-color",
       'content-icon-link-hover-color'                        => "$gwdg-content-icon-link-hover-color",
@@ -288,15 +290,16 @@ module OpenProject
       'content-calendar-cell-today-bg-color'                 => "#FFFFDD",
       'content-calendar-inactive-day-font-color'             => "#FFFFFF",
       'content-calendar-inactive-day-bg-color'               => "#4B4B4B",
-      'context-menu-font-color'                              => "$main-menu-font-color",
-      'content-box-border'                                   => "1px solid $content-default-border-color",
-      'content-box-bg-color'                                 => "#FFFFFF",
       'my-page-edit-box-border-color'                        => "$primary-color-dark",
       'drop-down-unselected-font-color'                      => "$gwdg-drop-down-unselected-font-color",
       'drop-down-selected-font-color'                        => "$gwdg-drop-down-selected-font-color",
       'drop-down-hover-font-color'                           => "$gwdg-drop-down-selected-font-color",
       'drop-down-selected-bg-color'                          => "$gwdg-drop-down-selected-bg-color",
       'drop-down-hover-bg-color'                             => "$gwdg-drop-down-selected-bg-color",
+      'context-menu-unselected-font-color'                   => "$gwdg-drop-down-unselected-font-color",
+      'context-menu-hover-font-color'                        => "$gwdg-drop-down-selected-font-color",
+      'content-box-border'                                   => "1px solid $content-default-border-color",
+      'content-box-bg-color'                                 => "#FFFFFF",
       'action-menu-bg-color'                                 => "#FFFFFF",
       'wiki-default-font-size'                               => "1rem",
       'wiki-toc-header-font-size'                            => "calc($wiki-default-font-size * 0.6)",
@@ -386,7 +389,16 @@ module OpenProject
     ##
     # Returns the keys of variables that are customizable through the design
     def self.customizable_variables
-      %w(primary-color primary-color-dark alternative-color)
+      %w( primary-color
+          primary-color-dark
+          alternative-color
+          header-bg-color
+          header-item-font-color
+          header-item-font-hover-color
+          header-item-bg-hover-color
+          header-border-bottom-color
+          content-link-color
+          main-menu-bg-color )
     end
   end
 end
