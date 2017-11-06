@@ -224,6 +224,7 @@ $se2-width: 100%;
     overflow: auto;
     margin: 4px 9px 9px 0;
     padding: 0 0 0 9px;
+    @include varprop(color, drop-down-unselected-font-color);
 
     .select2-highlighted {
       @include varprop(background-color, drop-down-selected-bg-color);

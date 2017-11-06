@@ -73,7 +73,7 @@ table.generic-table
   col
     &:hover,
     &.hover
-      background:   #f8f8f8
+      background:   $gray-light
 
   thead
     height: $generic-table--header-height
@@ -90,10 +90,10 @@ table.generic-table
 
       a
         text-decoration: none
-        color: $body-font-color
+        color: $body-title-font-color
         &:hover, &:active
           text-decoration: none
-          color: $body-font-color
+          color: $body-title-font-color
 
       .-required:after
         @include default-transition
@@ -213,7 +213,7 @@ html.-supports-sticky-headers
 
   &:hover,
   &.hover
-    background:   #f8f8f8
+    background:   $gray-light
 
   &.-hidden-content
     .generic-table--header,
@@ -240,6 +240,7 @@ html.-supports-sticky-headers
   clear:   both
   display: block
   min-width: 40px
+  color:   $body-title-font-color
 
   & > a,
   & > span

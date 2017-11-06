@@ -24,7 +24,8 @@ module OpenProject::Themes::GWDG
       [
         'layout/_footer.sass', 'layout/_top_menu.sass', #Top menu (header) and footer
         'layout/_base.sass', 'layout/_breadcrumb.sass', 'layout/_main_menu.sass', #Main menu (left menu) and breadcrumb
-        'content/_buttons.sass', 'layout/_toolbar.sass' #Buttons and toolbar
+        'content/_buttons.sass', 'layout/_toolbar.sass', #Buttons and toolbar
+        'content/_forms.sass', 'content/_links.sass', 'content/_projects_list.sass', 'content/_table.sass', 'content/_tabs.sass', 'layout/_work_packages_details_view.sass', 'vendor/_select2.scss' #Background, titles and text
       ].each do |overriden_file|
         FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'stylesheets', overriden_file), Rails.root.join('app', 'assets', 'stylesheets', overriden_file))
       end

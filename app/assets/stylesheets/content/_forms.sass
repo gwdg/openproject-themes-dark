@@ -234,7 +234,7 @@ $form--field-types: (text-field, text-area, select, check-box, radio-button, ran
   border:         0
 
 %form--fieldset-legend-or-section-title
-  color:          lighten($body-font-color, 10)
+  color:          $body-title-font-color
   font-size:      1rem
   font-weight:    bold
   line-height:    1.8
@@ -274,7 +274,7 @@ fieldset.form--fieldset
   float:          right
   margin-top:     -2.8rem
   text-align:     right
-  color:          lighten($body-font-color, 10)
+  color:          $body-title-font-color
   font-size:      1rem
   font-style:     italic
   line-height:    1.8
@@ -376,7 +376,7 @@ fieldset.form--fieldset
 
 .form--label-required
   @include default-transition
-  @include varprop(color, primary-color-dark)
+  @include varprop(color, gwdg-light-blue1)
   padding: 0 0.325rem
 
   .form--label.-error &
@@ -512,6 +512,7 @@ fieldset.form--fieldset
 
 .form--text-field
   @extend %input-style
+  color: $body-font-color
 
 .form--text-field,
 #{$text-input-selectors},
@@ -519,9 +520,11 @@ select
   line-height: 100%
   margin-bottom: 0rem
   font-size: 0.9rem
+  color: $body-font-color
 
   &:hover, &:focus, &:active
     border-color: #999
+    color: $body-font-color
 
 input[readonly].-clickable
   cursor: pointer
@@ -529,6 +532,7 @@ input[readonly].-clickable
 
 .form--select
   @extend %input-style
+  color: $body-font-color
   line-height: normal
   padding: rem-concat-list($select-element-padding)
   // TODO: Temporary fix, for sure it will be fixed with next foundation-app release v1.1.1
@@ -574,6 +578,7 @@ input[readonly].-clickable
 
 .form--text-area
   @extend %input-style
+  color: $body-font-color
 
   .form &
     margin-bottom: 0rem
@@ -663,7 +668,7 @@ input[readonly].-clickable
       &::after
         @include default-transition
         content:  '*'
-        @include varprop(color, primary-color-dark)
+        @include varprop(color, gwdg-light-blue1)
         padding:  0 0.325rem
       &:hover::after
         @include varprop(color, primary-color)
