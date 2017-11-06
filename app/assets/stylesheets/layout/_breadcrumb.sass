@@ -83,10 +83,20 @@ ul.breadcrumb
     width: 25px
     font-size: 12px
 
+    //First breadcrumb element (home)
+    &:hover
+      color: $breadcrumb-font-hover-selected-color
+
 #breadcrumb ul.breadcrumb li
   float: left
   margin: 0 0 0 10px
   padding: 0
+  a
+    text-decoration: none
+
+    //Breadcrumb elements
+    &:hover
+      color: $breadcrumb-font-hover-selected-color
 
 // Hide projects in normal mode
 body:not(.accessibility-mode) .breadcrumb .breadcrumb-project-element

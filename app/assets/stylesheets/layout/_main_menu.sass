@@ -46,6 +46,7 @@ $toggler-width: 40px
       +allow-vertical-scrolling
       -ms-overflow-style: -ms-autohiding-scrollbar
   ul
+    //menu item
     margin: 0
     padding: 0
 
@@ -94,6 +95,7 @@ $toggler-width: 40px
 
             &.selected, &.selected + a
               @include varprop(background, main-menu-bg-selected-background)
+              font-weight: bold
 
               &:hover
                 @include varprop(background, main-menu-bg-hover-background)
@@ -151,6 +153,7 @@ $toggler-width: 40px
 
           &.selected, &.selected + a
             @include varprop(background, main-menu-child-bg-selected-color)
+            font-weight: bold
 
 
           &:hover, &.selected, &.selected + a
@@ -192,8 +195,9 @@ $toggler-width: 40px
     float: left
 
   #toggle-project-menu
-    border: $main-menu-item-border-width solid $main-menu-item-border-color
-    height: $main-menu-item-height
+    //main menu upper section (expands/contracts the main menu)
+    border: $main-menu-border-width solid $main-menu-border-color
+    height: $main-menu-toggle-height
     width: $main-menu-width
     background-color: $main-menu-bg-color
     @include default-transition
@@ -209,7 +213,7 @@ $toggler-width: 40px
     a.navigation-toggler
       @include default-transition
       position: relative
-      height: $main-menu-item-height
+      height: $main-menu-toggle-height
       text-align: right
       padding: 0 6px 0 0
       &:hover
@@ -263,10 +267,11 @@ $toggler-width: 40px
     color: $main-menu-sidebar-link-color
     display: inline
     position: static
-    text-decoration: underline
+    text-decoration: none
 
   a:hover
-    text-decoration: underline
+    color: $main-menu-sidebar-link-hover-color
+    text-decoration: none
 
   label
     color: $main-menu-sidebar-font-color

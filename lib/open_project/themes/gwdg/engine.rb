@@ -22,7 +22,8 @@ module OpenProject::Themes::GWDG
       FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'images', 'themes-gwdg', 'gwdg_logo_only_invert.svg'), Rails.root.join('app', 'assets', 'images', 'gwdg_logo_only_invert.svg'))
       #Replaces stylesheet files
       [
-        'layout/_footer.sass', 'layout/_top_menu.sass'
+        'layout/_footer.sass', 'layout/_top_menu.sass', #Top menu (header) and footer
+        'layout/_base.sass', 'layout/_breadcrumb.sass', 'layout/_main_menu.sass' #Main menu (left menu) and breadcrumb
       ].each do |overriden_file|
         FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'stylesheets', overriden_file), Rails.root.join('app', 'assets', 'stylesheets', overriden_file))
       end
