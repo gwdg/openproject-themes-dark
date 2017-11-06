@@ -23,7 +23,8 @@ module OpenProject::Themes::GWDG
       #Replaces stylesheet files
       [
         'layout/_footer.sass', 'layout/_top_menu.sass', #Top menu (header) and footer
-        'layout/_base.sass', 'layout/_breadcrumb.sass', 'layout/_main_menu.sass' #Main menu (left menu) and breadcrumb
+        'layout/_base.sass', 'layout/_breadcrumb.sass', 'layout/_main_menu.sass', #Main menu (left menu) and breadcrumb
+        'content/_buttons.sass', 'layout/_toolbar.sass' #Buttons and toolbar
       ].each do |overriden_file|
         FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'stylesheets', overriden_file), Rails.root.join('app', 'assets', 'stylesheets', overriden_file))
       end
