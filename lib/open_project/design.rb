@@ -178,7 +178,7 @@ module OpenProject
       'h4-font-color'                                        => "$gwdg-body-title-font-color",
       'header-logo-width'                                    => "54px",
       'header-height'                                        => "50px",
-      'header-height-mobile'                                 => "45px",
+      'header-height-mobile'                                 => "55px",
       'header-bg-color'                                      => "$gwdg-header-background-color",
       'header-logo-bg-color'                                 => "$gwdg-header-background-color",
       'header-home-link-bg'                                  => '#{image-url("gwdg_logo_only_invert.svg") no-repeat 6px 0}',
@@ -326,6 +326,8 @@ module OpenProject
       'relations-save-button--disabled-color'                => "$gray-dark",
       'table-row-border-color'                               => "#E7E7E7",
       'table-row-highlighting-color'                         => "#e4f7fb",
+      'table-row-relations-row-background-color'             => "#dcebf4",
+      'table-row-hierarchies-row-font-color'                 => "#6C7A89",
       'table-header-border-color'                            => "#D7D7D7",
       'table-header-shadow-color'                            => "#DDDDDD",
       'loading-indicator-bg-color'                           => "$body-background",
@@ -358,6 +360,9 @@ module OpenProject
       'table-timeline--row-height'                           => '41px'
     }.freeze
 
+    # Regular expression for references of other variables.
+    VARIABLE_NAME_RGX = /\$([\w-]+)/
+
     ##
     # Returns the name of the color scheme.
     # To be overridden by a plugin
@@ -384,6 +389,21 @@ module OpenProject
     # To be used in the sass variable definition file
     def self.variables
       DEFAULTS
+    end
+
+    ##
+    # Return the value after resolving all variables to values.
+    def self.resolved_variables
+      resolved_variables = DEFAULTS.dup
+
+      DEFAULTS.each do |var_name, value|
+        resolved_variables[var_name] = resolve_value(value)
+      end
+      resolved_variables
+    end
+
+    def self.resolve_value(variable_value)
+      variable_value.gsub(VARIABLE_NAME_RGX) { resolve_value(DEFAULTS[$1]) }
     end
 
     ##
