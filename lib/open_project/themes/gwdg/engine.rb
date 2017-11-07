@@ -29,6 +29,12 @@ module OpenProject::Themes::GWDG
       ].each do |overriden_file|
         FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'assets', 'stylesheets', overriden_file), Rails.root.join('app', 'assets', 'stylesheets', overriden_file))
       end
+      #Replaces views files
+      [
+        'layouts/base.html.erb' #Logo
+      ].each do |overriden_file|
+        FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'views', overriden_file), Rails.root.join('app', 'views', overriden_file))
+      end
     end
 
   end

@@ -87,6 +87,9 @@ See doc/COPYRIGHT.rdoc for more details.
       <% if show_decoration %>
         <div id="top-menu">
           <div id="header">
+            <div id="logo" class="hidden-for-mobile">
+              <%= link_to(I18n.t('label_home'), home_url, class: 'home-link') %>
+            </div>
             <div id="top-menu-items">
               <h1 class="hidden-for-sighted">
                 <%= l(:label_top_menu) %>
@@ -97,9 +100,6 @@ See doc/COPYRIGHT.rdoc for more details.
                     <%= I18n.t('js.work_packages.jump_marks.content') %>
               </a>
               <%= render_top_menu_left %>
-              <div id="logo" class="hidden-for-mobile">
-                <%= link_to(I18n.t('label_home'), home_url, class: 'home-link') %>
-              </div>
               <%= call_hook :view_layouts_base_top_menu %>
               <div class="top-menu-items-right">
                 <%= render partial: 'search/mini_form' %>
