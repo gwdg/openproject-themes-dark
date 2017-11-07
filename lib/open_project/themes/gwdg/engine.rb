@@ -12,7 +12,7 @@ module OpenProject::Themes::GWDG
 
     register 'openproject-themes-gwdg',
       author_url: 'https://www.gwdg.de',
-      requires_openproject: ">= 7.2.0"
+      requires_openproject: ">= 7.3.0"
 
     #Overrides (replaces) the original files of OpenProject with the files from the plugin
     config.to_prepare do
