@@ -43,9 +43,7 @@ OpenProject::Static::Homescreen.manage :blocks do |blocks|
       if: Proc.new { !@news.empty? } },
     { partial: 'community' },
     { partial: 'administration',
-      if: Proc.new { User.current.admin? } },
-    { partial: 'upsale',
-      if: Proc.new { EnterpriseToken.show_banners? } }
+      if: Proc.new { User.current.admin? } }
   )
 end
 

@@ -35,6 +35,16 @@ module OpenProject::Themes::GWDG
       ].each do |overriden_file|
         FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'views', overriden_file), Rails.root.join('app', 'views', overriden_file))
       end
+      #Replaces controller files
+      [
+        'homescreen_controller.rb' #Number of newest projects, users and news
+      ].each do |overriden_file|
+        FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'app', 'controllers', overriden_file), Rails.root.join('app', 'controllers', overriden_file))
+      end
+      #Replaces homescreen.rb #Blocks to be shown on the homescreen
+      FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'config', 'initializers-gwdg', 'homescreen.rb'), Rails.root.join('config', 'initializers', 'homescreen.rb'))
+      #Replaces en.yml #Translations
+      FileUtils.cp(File.join(Gem.loaded_specs['openproject-themes-gwdg'].full_gem_path, 'config', 'locales', 'en.yml'), Rails.root.join('config', 'locales', 'en.yml'))
     end
 
   end

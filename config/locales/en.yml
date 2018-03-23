@@ -964,8 +964,8 @@ en:
 
   homescreen:
     additional:
-      projects: "Newest visible projects in this instance."
-      users: "Newest registered users in this instance."
+      projects: "Newest projects"
+      users: "Newest registered users"
     blocks:
       community: "OpenProject community"
       upsale:
